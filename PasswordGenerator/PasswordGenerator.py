@@ -21,3 +21,10 @@ if numbers:
     characters_to_use += NUMBERS
 if symbols:
     characters_to_use += SYMBOLS
+
+pass_length = 20
+amount_of_passwords = 5
+
+for x in range(amount_of_passwords):
+    password ="".join(random.sample(characters_to_use, pass_length))
+    print(password)
