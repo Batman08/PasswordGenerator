@@ -1,5 +1,7 @@
 import random
 import string
+import GeneratePasswords as gp
+import CharactersToUse as ctu
 
 UPPERCASE_LETTERS = string.ascii_uppercase
 LOWERCASE_LETTERS = string.ascii_lowercase
@@ -13,18 +15,7 @@ symbols = True
 
 characters_to_use = ""
 
-if upper_case:
-    characters_to_use += UPPERCASE_LETTERS
-if lower_case:
-    characters_to_use += LOWERCASE_LETTERS
-if numbers:
-    characters_to_use += NUMBERS
-if symbols:
-    characters_to_use += SYMBOLS
 
-pass_length = 20
-amount_of_passwords = 5
+characters_to_use = ctu.CharactersToUse.check_characters_use(LOWERCASE_LETTERS, NUMBERS, SYMBOLS, UPPERCASE_LETTERS, lower_case, numbers, symbols, upper_case, characters_to_use)
 
-for x in range(amount_of_passwords):
-    password ="".join(random.sample(characters_to_use, pass_length))
-    print(password)
+gp.GeneratePasswords.CreatePassword(characters_to_use)
